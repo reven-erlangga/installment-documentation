@@ -19,18 +19,12 @@ const SettingWhatsapp: NextPage<Props> = () => {
           <p>
             Dengan fitur ini, Anda dapat menambahkan script pesan kustom yang
             akan memudahkan pengguna untuk mengirim pesan ke nomor WhatsApp
-            tertentu. Misalnya, jika Anda menjual produk atau layanan melalui
-            website kami, Anda dapat menambahkan script pesan dengan pesan
-            promosi atau informasi lebih lanjut tentang produk atau layanan
-            Anda, sehingga pengguna dapat menghubungi Anda dengan mudah melalui
-            WhatsApp.
+            tertentu.
           </p>
           <p>
-            Kami berharap fitur ini dapat membantu Anda dalam memperluas
-            jangkauan bisnis Anda dan meningkatkan interaksi pengguna dengan
-            website kami. Jangan ragu untuk mengikuti langkah-langkah yang akan
-            kami berikan untuk menggunakan fitur ini dengan mudah dan efektif.
-            Terima kasih telah menggunakan website kami, dan selamat mencoba!
+            Kami berharap fitur ini dapat membantu Anda dalam melakukan follow
+            up cicilan ke murid. Terima kasih telah menggunakan website kami,
+            dan selamat mencoba!
           </p>
         </div>
 
@@ -56,8 +50,40 @@ const SettingWhatsapp: NextPage<Props> = () => {
               <tbody>
                 <tr>
                   <th>1</th>
-                  <td>Cy Ganderton</td>
-                  <td>Quality Control Specialist</td>
+                  <td>#student_name#</td>
+                  <td>Nama murid</td>
+                </tr>
+                <tr>
+                  <th>2</th>
+                  <td>#teacher_name#</td>
+                  <td>Nama guru</td>
+                </tr>
+                <tr>
+                  <th>3</th>
+                  <td>#day#</td>
+                  <td>Nama hari</td>
+                </tr>
+                <tr>
+                  <th>4</th>
+                  <td>#identify_order#</td>
+                  <td>
+                    Nomor identitas, dalam hal ini nomor order id (jika ada)
+                  </td>
+                </tr>
+                <tr>
+                  <th>5</th>
+                  <td>#class_name#</td>
+                  <td>Nama kelas</td>
+                </tr>
+                <tr>
+                  <th>6</th>
+                  <td>#start_course_date#</td>
+                  <td>Tanggal mulai kursus</td>
+                </tr>
+                <tr>
+                  <th>7</th>
+                  <td>#bill_pay#</td>
+                  <td>Total penagihan</td>
                 </tr>
               </tbody>
             </table>
@@ -66,6 +92,15 @@ const SettingWhatsapp: NextPage<Props> = () => {
 
         <div>
           <h2>Ganti Pesan Whatsapp</h2>
+          <div className="mockup-window border border-base-300">
+            <div className="flex justify-center">
+              <iframe
+                src="https://scribehow.com/embed/Bagaimana_Cara_Konfigurasi_Setting_Whatsapp__ywTRY6edQIeStVAeIhv2Jg"
+                width="100%"
+                height="640"
+              ></iframe>
+            </div>
+          </div>
         </div>
       </article>
     </LayoutDashboard>

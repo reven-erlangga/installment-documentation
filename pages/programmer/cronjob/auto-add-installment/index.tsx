@@ -1,5 +1,6 @@
 import LayoutProgrammer from "@/components/Layout/LayoutProgrammer";
 import { NextPage } from "next";
+import Link from "next/link";
 
 interface Props {}
 
@@ -32,7 +33,6 @@ const CronJobAutoAddInstallment: NextPage<Props> = () => {
             website kami, dan selamat mencoba!
           </p>
         </div>
-
         <div>
           <h2>Crontab</h2>
           <p>
@@ -40,7 +40,6 @@ const CronJobAutoAddInstallment: NextPage<Props> = () => {
             hari jamn 1 pagi
           </p>
         </div>
-
         <div>
           <h2>Logic</h2>
           <p>
@@ -52,28 +51,79 @@ const CronJobAutoAddInstallment: NextPage<Props> = () => {
             Berikut merupakan pseudo code untuk logika cronjob auto add
             installment progress
           </p>
-          <div className="mockup-code">
-            <pre>
-              <code>
-                1. Check apakah konfigurasi auto reminder sudah aktif. {"\n "}{" "}
-                2. Apabila tidak aktif maka proses selesai. {"\n "} 3. Apabila
-                aktif, maka ambil data di view installment recap {"\n "} dengan
-                kondisi have_in_installment_progress bernilai false. {"\n "} 4.
-                Ambil absent pertama kali pada data installment recap. {"\n "}{" "}
-                5. Ambil total absent pada data installment recap. {"\n "} 6.
-                Ambil keseluruhan termin dengan kondisi kelas dan periode{"\n "}{" "}
-                belajar sesuai dengan recap. {"\n "} 7. Jika installment recap
-                kelas private maka lakukan pengecekan {"\n "} berdasarkan batas
-                total sesi, apabila total absent lebih besar sama dengan {"\n "}{" "}
-                total sesi. Sedangkan jika kelas regular maka di check apakah
-                {"\n "} sudah melewati masa penagihan (due date - 7 hari).
-                {"\n "} 8. Masukan semua data di installment recap ke
-                installment progress{"\n "} mulai dari (nominal, payment,
-                termin).
-                {"\n "}{" "}
-              </code>
-            </pre>
-          </div>
+          <ul>
+            <li>Check apakah konfigurasi auto reminder sudah aktif.</li>
+            <li>Apabila tidak aktif maka proses selesai.</li>
+            <li>
+              Apabila aktif, cronjob akan mengambil data dari t_pembayaran dan
+              juga installment untuk selanjutnya di tambupung di{" "}
+              <b>v_rekap_installments</b>. View rekap installment merupakan view
+              yang dibuat untuk menampung data yang sudah masuk proses
+              penagihan.
+              <Link
+                href={`/programmer/database/view-installment`}
+                className="text-blue-600"
+              >
+                <h4>Tampilkan SQL Query Installment Recap</h4>
+              </Link>
+            </li>
+            <li>
+              <p>
+                Installment Progress / Proses Cicilan dibuat melalui kode yang
+                di picu (trigger) oleh cronjob. Data akan diambil oleh sistem
+                dan akan dimasukan ke installment progress sesuai dengan termin
+                yang berlaku setiap hari jam 1 pagi.
+                <h4>Cronjob Installment Progress Configuration</h4>
+                <div className="mockup-code mt-2">
+                  <pre>
+                    <code>{`$schedule->command('sales:auto_add_installment_progress')`}</code>{" "}
+                    <br />
+                    <code className="ml-10">{`->daily()`}</code> <br />
+                    <code className="ml-10">{`->at('01:00');`}</code>
+                  </pre>
+                </div>
+              </p>
+            </li>
+
+            <li>
+              Data tersebut akan ditampung oleh <b>queue</b> dengan tujuan agar
+              data yang di proses bisa diantrikan (queue) untuk dijalankan
+              nanti.
+            </li>
+            <li>
+              Data yang ada diantrian akan dijalankan dengan fungsi queue
+              melalui cronjob
+              <h4>Cronjob Queue Configuration</h4>
+              <div className="mockup-code mt-2">
+                <pre>
+                  <code>{`$schedule->command('queue:work --stop-when-empty')`}</code>{" "}
+                  <br />
+                  <code className="ml-10">{`->hourly()`}</code> <br />
+                  <code className="ml-10">{`->withoutOverlapping();`}</code>
+                </pre>
+              </div>
+            </li>
+            <li>
+              Data yang ada di installment progress atau bisa disebut juga
+              sebagai murid follow up akan dilakukan follow up oleh admin yang
+              bertanggung jawab.
+            </li>
+            <li>Ambil total absent pada data installment recap.</li>
+            <li>
+              Ambil keseluruhan termin dengan kondisi kelas dan periode belajar
+              sesuai dengan recap.
+            </li>
+            <li>
+              Jika installment recap kelas private maka lakukan pengecekan
+              berdasarkan batas total sesi, apabila total absent lebih besar
+              sama dengan total sesi. Sedangkan jika kelas regular maka di check
+              apakah sudah melewati masa penagihan (due date - 7 hari).
+            </li>
+            <li>
+              Masukan semua data di installment recap ke installment progress
+              mulai dari (nominal, payment, termin).
+            </li>
+          </ul>
         </div>
       </article>
     </LayoutProgrammer>

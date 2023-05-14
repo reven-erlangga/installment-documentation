@@ -1,3 +1,4 @@
+import Alert, { Type } from "@/components/Alert";
 import LayoutDashboard from "@/components/LayoutDashboard";
 import { NextPage } from "next";
 
@@ -64,77 +65,103 @@ const TaskFollowUp: NextPage<Props> = () => {
               dipilih oleh pengguna
             </li>
           </ul>
-          <div className="alert alert-warning shadow-lg">
-            <div>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="stroke-current flex-shrink-0 h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
-                />
-              </svg>
-              <span>
-                Saat mengirim follow up by telp, pastikan anda sudah melakukan
+          <Alert
+            type={Type.Warning}
+            message={`Saat mengirim follow up by telp, pastikan anda sudah melakukan
                 di hari yang sesuai. Di beberapa case anda tidak akan bisa input
                 foto bukti follow up by telp apabila step penagihan sudah
-                terlewat
-              </span>
-            </div>
-          </div>{" "}
+                terlewat`}
+          />
           <br />
-          <div className="alert alert-error shadow-lg">
-            <div>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="stroke-current flex-shrink-0 h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              </svg>
-              <span>
-                Anda tidak bisa melakukan follow up ke step yang sudah terlewat.
-              </span>
+          <Alert
+            type={Type.Error}
+            message={`Anda tidak bisa melakukan follow up ke step yang sudah terlewat.`}
+          />{" "}
+          <br />
+          <div className="mockup-window border border-base-300">
+            <div className="flex justify-center">
+              <iframe
+                src="https://scribehow.com/embed/Workflow__JuN1iM2IRsm-KCBMKlsPWw"
+                width="100%"
+                height="640"
+              ></iframe>
             </div>
           </div>
         </div>
         <div>
-          <h2>Mengubah Data Follow Up</h2>
-          <p>s</p>
+          <h2>Melihat Data Follow Up</h2>
+          <p>
+            Apabila anda ingin melihat detail dari hasil follow up yang
+            dilakukan ke murid anda dapat melihat tutorial berikut. Adapun
+            beberapa hal yang bisa anda lakukan :
+          </p>
+          <ul>
+            <li>Melihat detail follow up</li>
+            <li>Mengetahui list detail pembayaran yang dilakukan</li>
+            <li>Mengetahui list detail follow up yang dilakukan</li>
+          </ul>
+          <div className="mockup-window border border-base-300">
+            <div className="flex justify-center">
+              <iframe
+                src="https://scribehow.com/embed/Workflow__GtbvQcuESg-3gEoZcx_fHg"
+                width="100%"
+                height="640"
+              ></iframe>
+            </div>
+          </div>
         </div>
         <div>
           <h2>Pembayaran</h2>
           <ul>
             <li>
-              <h3>Termin Yang Sama</h3>
-              <p>s</p>
-            </li>
-            <li>
-              <h3>Termin Yang Berbeda</h3>
-              <p>s</p>
-            </li>
-            <li>
               <h3>Lunas</h3>
-              <p>s</p>
+              <p>
+                Kondisi ini merupakan kondisi saat murid sudah melakukan
+                pelunasan pembayaran dengan biaya yang telah disepakati.
+              </p>
+              <div className="mockup-window border border-base-300">
+                <div className="flex justify-center">
+                  <iframe
+                    src="https://scribehow.com/embed/Pembayaran_Kelas_Lunas__F_1Rzr9KSrCs8OiFXtg65A"
+                    width="100%"
+                    height="640"
+                  ></iframe>
+                </div>
+              </div>
             </li>
             <li>
               <h3>Partial / Pembayaran Sebagian</h3>
-              <p>s</p>
+              <p>
+                Kondisi ini merupakan kondisi saat murid melakukan pembayaran
+                dengan termin yang sama. Apabila murid melakukan perjanjian
+                dengan sales dalam hal pembayaran termin, metode ini dapat
+                digunakan untuk mengcover hal tersebut.
+              </p>
+              <div className="mockup-window border border-base-300">
+                <div className="flex justify-center">
+                  <iframe
+                    src="https://scribehow.com/embed/Pembayaran_Kelas_Secara_Partial__k11ZRpwFTOG0BA7iBA24SA"
+                    width="100%"
+                    height="640"
+                  ></iframe>
+                </div>
+              </div>
             </li>
             <li>
               <h3>Tidak Lunas</h3>
-              <p>s</p>
+              <p>
+                Kondisi saat murid yang sedang di follow up tidak dapat melunasi
+                biaya yang disepakati.
+              </p>
+              <div className="mockup-window border border-base-300">
+                <div className="flex justify-center">
+                  <iframe
+                    src="https://scribehow.com/embed/Pembayaran_Kelas_Tidak_Lunas__bdxEEgHXQgOSRStEGwAoBg"
+                    width="100%"
+                    height="640"
+                  ></iframe>
+                </div>
+              </div>
             </li>
           </ul>
         </div>

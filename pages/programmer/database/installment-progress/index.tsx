@@ -1,5 +1,6 @@
 import LayoutProgrammer from "@/components/Layout/LayoutProgrammer";
 import { NextPage } from "next";
+import Link from "next/link";
 
 interface Props {}
 
@@ -24,15 +25,6 @@ const DatabaseInstallmentProgress: NextPage<Props> = () => {
             berikutnya. Dengan menggunakan database installment progress, kita
             dapat mengatur dan mengelola pembayaran dengan lebih efektif dan
             efisien.
-          </p>
-          <p>
-            Dalam tutorial ini, kita akan membahas tentang bagaimana menggunakan
-            database installment progress, termasuk cara membuat tabel,
-            menyimpan data, dan melakukan query untuk mengambil informasi dari
-            database tersebut. Kita juga akan membahas beberapa istilah dan
-            konsep penting dalam database installment progress, seperti tabel
-            progress cicilan, jumlah cicilan yang telah dibayar, dan tanggal
-            jatuh tempo berikutnya.
           </p>
           <p>
             Dengan memahami penggunaan database installment progress, Anda dapat

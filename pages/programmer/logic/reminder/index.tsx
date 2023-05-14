@@ -48,18 +48,23 @@ const LogicReminder: NextPage<Props> = () => {
             <a href="https://crontab.guru/">Crontab Guru</a>
           </p>
           <h4>Pseudo Code</h4>
-          <p>Berikut merupakan pseudo code untuk logika authentifikasi</p>
-          <div className="mockup-code">
-            <pre>
-              <code>
-                1. Check di setting database apakah auto reminder dinyakalan{" "}
-                {"\n "} (on) atau dinonaktifkan (off) {"\n "} 2. Apabila dalam
-                kondisi off maka reminder tidak akan dilakukan {"\n "} 3.
-                Apabila dalam kondisi on maka reminder akan dilakukan sesuai{" "}
-                {"\n "} dengan kriteria yang berlaku di file <b>Kernel.php</b>
-              </code>
-            </pre>
-          </div>
+          <p>
+            Berikut merupakan pseudo code yang digunakan untuk logik dalam
+            mengirimkan pesan pengingat / reminder adalah sebagai berikut :{" "}
+          </p>
+          <ul>
+            <li>
+              Check di setting database apakah auto reminder dinyakalan (on)
+              atau dinonaktifkan (off).
+            </li>
+            <li>
+              Apabila dalam kondisi off maka reminder tidak akan dilakukan.
+            </li>
+            <li>
+              Apabila dalam kondisi on maka reminder akan dilakukan sesuai
+              dengan kriteria yang berlaku di file <b>Kernel.php</b>
+            </li>
+          </ul>
         </div>
       </article>
     </LayoutProgrammer>

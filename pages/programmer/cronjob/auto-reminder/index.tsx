@@ -34,6 +34,15 @@ const CronJobAutoReminder: NextPage<Props> = () => {
         </div>
 
         <div>
+          <h2>Crontab</h2>
+          <p>
+            Syntax untuk pengecekan menambahkan data cicilan dilakukan setiap
+            hari jam 4 pagi dan di delay 6 jam kedepan. Delay digunakan agar
+            pesan whatsapp tidak masuk jam 4 pagi ke customer.
+          </p>
+        </div>
+
+        <div>
           <h2>Logic</h2>
           <p>
             Sistem akan menyeleksi data di installment progress untuk reminder
@@ -43,21 +52,34 @@ const CronJobAutoReminder: NextPage<Props> = () => {
           <p>
             Berikut merupakan pseudo code untuk logika cronjob auto reminder
           </p>
-          <div className="mockup-code">
-            <pre>
-              <code>
-                1. Ambil data dari installment progress. {"\n "} 2. Ambil termin
-                terpilih berdasarkan parameter dari installment progress.{" "}
-                {"\n "} 3. Check tipe kelas, apabila private apabila private{" "}
-                {"\n "} maka parameter berdasarkan sesi dan apabila regular maka{" "}
-                {"\n "} parameter berdasarkan tanggal. {"\n "} 4. Lakukan
-                penyesuaian step tergantung parameter yang terpilih. {"\n "} 5.
-                Kirim pesan ke guru ataupun murid dan update step di installment
-                progress{"\n "} serta create new data di installment progress
-                list.
-              </code>
-            </pre>
-          </div>
+          <ul>
+            <li>Ambil data dari installment progress.</li>
+            <li>
+              Ambil termin terpilih berdasarkan parameter dari installment
+              progress.
+            </li>
+            <li>
+              Check tipe kelas, apabila private apabila private maka parameter
+              berdasarkan sesi dan apabila regular maka parameter berdasarkan
+              tanggal.
+            </li>
+            <li>
+              Lakukan penyesuaian step tergantung parameter yang terpilih.
+            </li>
+            <li>
+              Kirim pesan ke guru ataupun murid dan update step di installment
+              progress serta create new data di installment progress list.
+              <h4>Cronjob Send Reminder to Customer Configuration</h4>
+              <div className="mockup-code mt-2">
+                <pre>
+                  <code>{`$schedule->command('sales:send_reminder_to_customers')`}</code>{" "}
+                  <br />
+                  <code className="ml-10">{`->daily()`}</code> <br />
+                  <code className="ml-10">{`->at('04:00');`}</code>
+                </pre>
+              </div>
+            </li>
+          </ul>
         </div>
       </article>
     </LayoutProgrammer>

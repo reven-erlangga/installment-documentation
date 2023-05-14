@@ -87,6 +87,10 @@ const PreRequirements: NextPage<Props> = () => {
 
         <div>
           <h2>Layanan</h2>
+          <p>
+            Berikut merupakan layanan yang digunakan di website cicilan yang ada
+            sekarang adalah sebagai berikut :
+          </p>
           <div className="overflow-x-auto">
             <table className="table w-full">
               <thead>
@@ -109,6 +113,10 @@ const PreRequirements: NextPage<Props> = () => {
 
         <div>
           <h2>Kriteria Hosting</h2>
+          <p>
+            Berikut merupakan kriteria hosting yang harus dimiliki oleh penyedia
+            hosting adalah sebagai berikut :
+          </p>
           <ul>
             <li>Memiliki CronJob</li>
             <li>Memiliki Hosting Email</li>

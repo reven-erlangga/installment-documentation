@@ -1,5 +1,7 @@
 import LayoutProgrammer from "@/components/Layout/LayoutProgrammer";
 import { NextPage } from "next";
+import Image from "next/image";
+import viewInstallmentRecap from "../../../../public/assets/images/programmers/view-rekap-installments.svg";
 
 interface Props {}
 
@@ -28,14 +30,6 @@ const DatabaseViewInstallment: NextPage<Props> = () => {
             secara bersamaan.
           </p>
           <p>
-            Dalam tutorial ini, kita akan membahas tentang bagaimana membuat
-            database view installment recap, termasuk cara menggabungkan
-            informasi dari beberapa tabel dalam sebuah database menjadi satu
-            tampilan yang komprehensif. Kita juga akan membahas beberapa istilah
-            dan konsep penting dalam database view installment recap, seperti
-            tabel progress cicilan dan tabel pembayaran.
-          </p>
-          <p>
             Dengan memahami penggunaan database view installment recap, Anda
             dapat mengembangkan aplikasi atau website yang lebih baik dan
             efisien dalam pengelolaan pembayaran. Jangan ragu untuk mengikuti
@@ -53,11 +47,24 @@ const DatabaseViewInstallment: NextPage<Props> = () => {
             <li>Mengetahui status pembayaran murid</li>
           </ul>
         </div>
+
         <div>
           <h2>Relasi</h2>
           <ul>
             <li>Installment Progress {"(n > 1)"}</li>
           </ul>
+        </div>
+
+        <div>
+          <h2>View Installment Recap SQL Syntax</h2>
+          <p>
+            Berikut merupakan gambar syntax code untuk view installment recap.
+          </p>
+          <Image
+            priority
+            src={viewInstallmentRecap}
+            alt="View Installment Recap MySQL Syntax"
+          />
         </div>
       </article>
     </LayoutProgrammer>

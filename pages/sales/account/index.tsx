@@ -40,10 +40,6 @@ const Account: NextPage<Props> = () => {
             <li>Detail Akun</li>
           </ul>
         </div>
-
-        <div>
-          <h2>Memperbaharui Akun</h2>
-        </div>
       </article>
     </LayoutDashboard>
   );

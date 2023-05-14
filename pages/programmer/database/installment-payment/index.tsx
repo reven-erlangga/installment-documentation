@@ -25,14 +25,6 @@ const DatabaseInstallmentPayment: NextPage<Props> = () => {
             mengelola pembayaran dengan lebih efektif dan efisien.
           </p>
           <p>
-            Dalam tutorial ini, kita akan membahas tentang bagaimana menggunakan
-            database installment payment, termasuk cara membuat tabel, menyimpan
-            data, dan melakukan query untuk mengambil informasi dari database
-            tersebut. Kita juga akan membahas beberapa istilah dan konsep
-            penting dalam database installment payment, seperti tabel
-            pembayaran, tanggal pembayaran, dan jumlah pembayaran.
-          </p>
-          <p>
             Dengan memahami penggunaan database installment payment, Anda dapat
             mengembangkan aplikasi atau website yang lebih baik dan efisien
             dalam pengelolaan pembayaran. Jangan ragu untuk mengikuti tutorial

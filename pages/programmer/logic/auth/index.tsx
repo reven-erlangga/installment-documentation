@@ -68,16 +68,14 @@ const LogicAuth: NextPage<Props> = () => {
           <br />
           <h4>Pseudo Code</h4>
           <p>Berikut merupakan pseudo code untuk logika authentifikasi :</p>
-          <div className="mockup-code">
-            <pre>
-              <code>
-                1. Ambil data akun di database {"\n "} 2. Check level akun
-                terkait {"\n "} 3. Apabila level akun tersebut adalah level 4
-                maka approve akun tersebut {"\n "} dan arahkan ke dashboard
-                sales
-              </code>
-            </pre>
-          </div>
+          <ul>
+            <li>Ambil data akun di database.</li>
+            <li>Check level akun terkait.</li>
+            <li>
+              Apabila level akun tersebut adalah level 4 maka approve akun
+              tersebut dan arahkan ke dashboard sales.
+            </li>
+          </ul>
         </div>
       </article>
     </LayoutProgrammer>

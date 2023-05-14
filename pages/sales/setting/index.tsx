@@ -18,10 +18,7 @@ const Setting: NextPage<Props> = () => {
           <p>
             Dengan fitur ini, Anda dapat mengatur tindakan yang akan dilakukan
             secara otomatis ketika pengguna melakukan tindakan tertentu pada
-            website kami. Misalnya, Anda dapat mengatur sistem untuk secara
-            otomatis mengirim email konfirmasi setelah pengguna melakukan
-            pembelian, atau mengatur sistem untuk mengirim pemberitahuan kepada
-            pengguna ketika ada pembaruan penting di website kami.
+            website kami.
           </p>
           <p>
             Kami berharap fitur ini dapat membantu Anda dalam menghemat waktu
@@ -43,6 +40,16 @@ const Setting: NextPage<Props> = () => {
 
         <div>
           <h2>Ganti auto action</h2>
+          <p>Silahkan cermati proses membuat termin dibawah ini.</p>
+          <div className="mockup-window border border-base-300">
+            <div className="flex justify-center">
+              <iframe
+                src="https://scribehow.com/embed/Konfigurasi_Sales_Setting__PO4LL2BkQf2XT89-9dvy5w"
+                width="100%"
+                height="640"
+              ></iframe>
+            </div>
+          </div>
         </div>
       </article>
     </LayoutDashboard>

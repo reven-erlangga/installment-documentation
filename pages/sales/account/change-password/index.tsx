@@ -37,10 +37,6 @@ const AccountChangePassword: NextPage<Props> = () => {
             <li>Ganti Password</li>
           </ul>
         </div>
-
-        <div>
-          <h2>Ganti Password</h2>
-        </div>
       </article>
     </LayoutDashboard>
   );

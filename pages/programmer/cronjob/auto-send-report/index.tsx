@@ -35,8 +35,15 @@ const CronJobAutoSendReport: NextPage<Props> = () => {
         <div>
           <h2>Logic</h2>
           <p>
-            Sistem akan mengirimkan log report setiap senin jam 4 pagi ke email
-            IT.
+            Sistem akan mengirimkan log report setiap senin jam 4 pagi (weekly /
+            mingguan) ke email IT. Log diambil dari catatan log di file{" "}
+            <b>laravel.log </b>.<h4>Cronjob Send Report Configuration</h4>
+            <div className="mockup-code mt-2">
+              <pre>
+                <code>{`$schedule->command('sales:send_logs')`}</code> <br />
+                <code className="ml-10">{`->weeklyOn(1, '3:00')`}</code> <br />
+              </pre>
+            </div>
           </p>
         </div>
       </article>

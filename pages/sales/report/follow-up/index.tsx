@@ -43,6 +43,15 @@ const ReportFollowUp: NextPage<Props> = () => {
         </div>
         <div>
           <h2>Report Follow Up</h2>
+          <div className="mockup-window border border-base-300">
+            <div className="flex justify-center">
+              <iframe
+                src="https://scribehow.com/embed/Report_Data_Follow_Up_Cicilan__onjPGoARRiCUtcFiAg9Njg"
+                width="100%"
+                height="640"
+              ></iframe>
+            </div>
+          </div>
         </div>
       </article>
     </LayoutDashboard>
